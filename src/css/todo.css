@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
+
+.main-container {
+  width: 50vw;
+  min-height: 60vh;
+  margin: 0 auto;
+  border: 3px solid gray;
+  border-radius: 10px;
+}
+.heading {
+  /* color: #fff; */
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.register {
+  float: right;
+}
+.inputs-wrapper {
+  text-align: center;
+}
+.inputs-wrapper input {
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border: none;
+  border-bottom: 2px solid gray;
+  outline: none;
+}
+.icons {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.add-icon {
+  font-size: 2rem;
+  color: rgb(67, 250, 11);
+}
+.delete-icon {
+  color: rgb(231, 25, 25);
+}
+li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+li::marker {
+  color: blue;
+  margin-right: 1rem;
+}
+.todos {
+  display: flex;
+  justify-content: space-between;
+}
+.icons-wrapper {
+  width: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+/* responsive code  */
+@media (max-width: 780px) {
+  .main-container {
+    width: 100%;
+  }
+}
