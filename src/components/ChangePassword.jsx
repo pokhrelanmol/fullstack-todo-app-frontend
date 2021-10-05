@@ -47,7 +47,7 @@ const ChangePassword = () => {
 
   return (
     <div className="container">
-      <h2 className="heading">Login</h2>
+      <h2 className="heading">Change Password</h2>
 
       <form className="form" onSubmit={handleSubmit(onSubmitHandler)}>
         <label className="control-label" htmlFor="Name">
