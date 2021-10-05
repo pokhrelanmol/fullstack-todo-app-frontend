@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer } from "react";
 import Todos from "./Todo";
 import axios from "axios";
 import Modal from "./Modal";
@@ -36,7 +36,7 @@ const reducer = (state, action) => {
         const todoToBePosted = action.payload;
         axios
           .post(
-            "http://localhost:3001/todos",
+            "https://makeyourlists.herokuapp.com/",
             { data: todoToBePosted },
             {
               headers: {
@@ -54,7 +54,7 @@ const reducer = (state, action) => {
       }
     case actionTypes.DELETE:
       axios
-        .delete("http://localhost:3001/todos", {
+        .delete("https://makeyourlists.herokuapp.com/", {
           data: { id: action.payload },
         })
         .then(() => alert(`todo with id ${action.payload} deleted`))
@@ -77,7 +77,7 @@ const reducer = (state, action) => {
       };
     case actionTypes.UPDATE:
       axios
-        .patch("http://localhost:3001/todos", {
+        .patch("https://makeyourlists.herokuapp.com/", {
           id: action.payload.id,
           newTodo: action.payload.updatedTodo,
         })

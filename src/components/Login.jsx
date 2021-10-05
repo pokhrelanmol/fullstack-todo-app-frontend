@@ -23,7 +23,10 @@ const Login = () => {
   });
   const onSubmitHandler = async (data) => {
     try {
-      const res = await axios.post("http://localhost:3001/login", data);
+      const res = await axios.post(
+        "https://makeyourlists.herokuapp.com/login",
+        data
+      );
       if (res.data.userToken) {
         localStorage.setItem("token", res.data.userToken);
         alert("login successfull");

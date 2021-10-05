@@ -7,20 +7,20 @@ import { useHistory } from "react-router-dom";
 import { UsernameContext } from "../contexts/UsernameContext";
 import "../css/todo.css";
 const Todos = ({ dispatch, todos, loading }) => {
-  const { username } = useContext(UsernameContext);
+  const { username, setUsername } = useContext(UsernameContext);
   const history = useHistory();
   const [userInput, setUserInput] = useState("");
   const handleChange = (e) => {
     setUserInput(e.target.value);
   };
   async function populateTodos() {
-    const req = await axios.get("http://localhost:3001/todos", {
+    const req = await axios.get("https://makeyourlists.herokuapp.com/", {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },
     });
     if (req.statusText === "OK") {
-      const resData = await req.data.todo;
+      await req.data.todo;
       dispatch({
         type: actionTypes.FETCH,
         payload: { data: req.data.todo, loading: false },
@@ -34,6 +34,7 @@ const Todos = ({ dispatch, todos, loading }) => {
     if (token) {
       const user = jwt.decode(token);
       if (user) {
+        setUsername(user.user);
         populateTodos();
       } else {
         localStorage.removeItem("token");

@@ -37,7 +37,7 @@ const RegistrationForm = () => {
   const onSubmitHandler = async (data) => {
     // storing data in database
     try {
-      const res = await axios.post("http://localhost:3001/register", data);
+      await axios.post("https://makeyourlists.herokuapp.com/register", data);
       alert("user registered");
       history.push("/login");
       reset();

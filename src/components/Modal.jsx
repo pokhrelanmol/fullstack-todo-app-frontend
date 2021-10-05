@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { actionTypes } from "./Todos";
 const Modal = ({ isOpen, data, dispatch }) => {
   const [modalOpen, setModalOpen] = React.useState(true);
