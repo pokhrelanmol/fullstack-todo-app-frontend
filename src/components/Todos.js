@@ -36,7 +36,7 @@ const reducer = (state, action) => {
         const todoToBePosted = action.payload;
         axios
           .post(
-            "http://localhost:3001/",
+            "https://makeyourlists.heroku.com",
             { data: todoToBePosted },
             {
               headers: {
@@ -53,7 +53,7 @@ const reducer = (state, action) => {
       }
     case actionTypes.DELETE:
       axios
-        .delete("http://localhost:3001/", {
+        .delete("https://makeyourlists.herokuapp.com/", {
           data: { id: action.payload },
         })
         .then(() => alert(`todo with id ${action.payload} deleted`))
@@ -76,7 +76,7 @@ const reducer = (state, action) => {
       };
     case actionTypes.UPDATE:
       axios
-        .patch("http://localhost:3001/", {
+        .patch("https://makeyourlists.herokuapp.com/", {
           id: action.payload.id,
           newTodo: action.payload.updatedTodo,
         })

@@ -14,7 +14,7 @@ const Todos = ({ dispatch, todos, loading }) => {
     setUserInput(e.target.value);
   };
   async function populateTodos() {
-    const req = await axios.get("http://localhost:3001/", {
+    const req = await axios.get("https://makeyourlists.herokuapp.com/", {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },
